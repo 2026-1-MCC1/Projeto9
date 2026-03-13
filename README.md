@@ -16,7 +16,7 @@ Vide tutoriais do PI.
 
 <<<<<<< HEAD
 
-## Integrantes: <a href="https://www.linkedin.com/in/gabriel-ribeiro-alves-a5984b329/">Gabriel Ribeiro Alves</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Kimura</a>, <a href="https://www.linkedin.com/in/samuel-eblak-851a19367/">Samuel Eblak</a>
+## Integrantes: <a href="https://www.linkedin.com/in/gabriel-ribeiro-alves-a5984b329/">Gabriel Ribeiro Alves</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Kimura</a>, <a href="https://www.linkedin.com/in/samuel-eblak-851a19367/">Samuel Eblak.</a>
 >>>>>>> 479a4f26fd9e0acee8977a7e59ac475501a25236
 >>>>>>> 72ee18503090fdc3c91b82ad8df1b5fe4a8a14cc
 
