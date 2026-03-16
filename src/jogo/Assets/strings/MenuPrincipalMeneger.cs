@@ -15,17 +15,21 @@ public class MenuPrincipalMeneger : MonoBehaviour
     {
         CanvaMenu.SetActive(false);
         CanvaSom.SetActive(true);
+        
     }
 
     public void FecharOpcoes()
     {
         CanvaMenu.SetActive(true);
         CanvaSom.SetActive(false);
+       
 
     }
 
     public void SairJogo()
-    { 
+    {
+        Debug.Log("Fechando o game");
+        Application.Quit();
 
     }
 }
