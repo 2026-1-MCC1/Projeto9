@@ -4,17 +4,21 @@ public class personagem : MonoBehaviour
 {
     public float speed = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public Transform spawnPoint; //ponto inicial mapa
+    public GameObject player;
     void Start()
     {
         Debug.Log("personagem inicio.");
+        Instantiate(player, spawnPoint.position, spawnPoint.rotation); //ponto inicial
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
-        
-        if (Input.GetKey(KeyCode.UpArrow))
+
+    { 
+        if (Input.GetKey(KeyCode.UpArrow)) //movimenta��es
+
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
