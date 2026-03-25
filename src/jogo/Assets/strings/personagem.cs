@@ -2,38 +2,66 @@ using UnityEngine;
 
 public class personagem : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 18f;
+    private float verticalclamp = 5f;
+    private float sensitivity = 5f;
+    private float verticalrotation = 50f;
+    public Transform cameraContainer;
+    public bool isGrounded;
+    private Rigidbody rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public Transform spawnPoint; //ponto inicial mapa
-    public GameObject player;
     void Start()
     {
-        Debug.Log("personagem inicio.");
-        Instantiate(player, spawnPoint.position, spawnPoint.rotation); //ponto inicial
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
 
-    { 
-        if (Input.GetKey(KeyCode.UpArrow)) //movimenta��es
+    {
+        #region Rotações de mouse
+        Cursor.lockState = CursorLockMode.Locked;
 
+        float mouseX = Input.GetAxis("Mouse X");
+        transform.Rotate(0f, mouseX, 0f);
+
+        float mouseY = Input.GetAxis("Mouse Y");
+        verticalrotation -= mouseY;
+        verticalrotation -= Mathf.Clamp(verticalrotation, -verticalclamp, verticalclamp);
+
+
+        #endregion
+
+
+
+        #region Movimentos de Personagem
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        float jump = Input.GetAxis("Jump");
+        Vector3 direction = transform.right * h + transform.forward * v;
+        transform.position += direction * speed * Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
+            this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
+        } }
+        private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            transform.Translate(Vector3.back * Time.deltaTime * speed);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector3.right * Time.deltaTime * speed);
+            isGrounded = true;
         }
     }
-}
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+     #endregion
+    }
+
 
