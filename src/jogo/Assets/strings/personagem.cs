@@ -7,12 +7,11 @@ public class personagem : MonoBehaviour
     private float sensitivity = 5f;
     private float verticalrotation = 50f;
     public Transform cameraContainer;
-    
+   public bool isGrounded;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -41,11 +40,28 @@ public class personagem : MonoBehaviour
         Vector3 direction = transform.right * h + transform.forward * v;
         transform.position += direction * speed * Time.deltaTime;
 
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
+        } }
+        private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGrounded = true;
         }
     }
 
- 
-     #endregion
-    
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+   
+        #endregion
+    }
 
 
