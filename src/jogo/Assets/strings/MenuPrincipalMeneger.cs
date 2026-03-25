@@ -8,7 +8,7 @@ public class MenuPrincipalMeneger : MonoBehaviour
 
     public void Jogar()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("labirinto");
     }
 
     public void AbrirOpcoes()
