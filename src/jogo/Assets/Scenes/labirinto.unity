@@ -1773,12 +1773,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.66, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.036045767, y: -0.09, z: 0.073}
+  m_LocalScale: {x: 0.46721634, y: 1.1682818, z: 1.1125214}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 870340666}
+  m_Father: {fileID: 834577872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -2990,7 +2990,8 @@ Transform:
   m_LocalPosition: {x: 2.746, y: 3.18, z: 0.713}
   m_LocalScale: {x: 0.21571705, y: 12.897729, z: 1.1443524}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 905627152}
   m_Father: {fileID: 1467678353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &730424071
@@ -3120,6 +3121,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &834577871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 834577872}
+  m_Layer: 0
+  m_Name: camContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &834577872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834577871}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.077150054, y: 0.726472, z: 0.30044064}
+  m_LocalScale: {x: 2.140336, y: 0.8559579, z: 0.89885914}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 330585546}
+  m_Father: {fileID: 870340666}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870340661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,8 +3186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e8522197abed14cb2d4167c637bd9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::personagem
-  speed: 18
-  cameraContainer: {fileID: 0}
+  moveSpeed: 18
+  jumpForce: 5
+  mouseSensitivity: 2
+  verticalClamp: 50
+  cameraContainer: {fileID: 834577872}
   isGrounded: 0
 --- !u!136 &870340663
 CapsuleCollider:
@@ -3172,7 +3208,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -3244,13 +3280,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870340661}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.7, y: 6.8, z: 52}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 26.7, y: 28.75, z: 52}
   m_LocalScale: {x: 1.425776, y: 3.5651755, z: 3.3950148}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 620697896}
-  - {fileID: 330585546}
+  - {fileID: 834577872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &870340667
@@ -3279,7 +3315,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &882676869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,12 +3679,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905627151}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.426, y: 3.18, z: 1.373}
-  m_LocalScale: {x: 0.21571705, y: 12.897729, z: 1.0558705}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.1522777, y: 0, z: 0.57674545}
+  m_LocalScale: {x: 1, y: 1, z: 0.9226794}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1467678353}
+  m_Father: {fileID: 730424070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &905627153
 BoxCollider:
@@ -5225,12 +5261,11 @@ Transform:
   - {fileID: 889798775}
   - {fileID: 1433964696}
   - {fileID: 1688240616}
-  - {fileID: 905627152}
   - {fileID: 730424070}
   - {fileID: 1515021441}
   - {fileID: 144388622}
-  - {fileID: 419491239}
   - {fileID: 96371046}
+  - {fileID: 419491239}
   - {fileID: 601762654}
   - {fileID: 1358446174}
   - {fileID: 72551979}

@@ -1,50 +1,61 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
-public class personagem : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public float speed = 18f;
-    private float verticalclamp = 5f;
-    private float sensitivity = 5f;
-    private float verticalrotation = 50f;
+    [Header("Movimentação")]
+    public float moveSpeed = 18f;
+    public float jumpForce = 5f;
+
+    [Header("Mouse")]
+    public float mouseSensitivity = 2f; // Sensibilidade costuma ser menor que 5
+    public float verticalClamp = 50f;
+
+    [Header("Referências")]
     public Transform cameraContainer;
-   public bool isGrounded;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private float verticalRotation = 0f;
+    public bool isGrounded;
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
-
     {
-        #region Rotações de mouse
-        Cursor.lockState = CursorLockMode.Locked;
-
-        float mouseX = Input.GetAxis("Mouse X");
+        // --- Rotação horizontal (Gira o corpo todo no eixo Y) ---
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(0f, mouseX, 0f);
 
-        float mouseY = Input.GetAxis("Mouse Y");
-        verticalrotation -= mouseY;
-        verticalrotation -= Mathf.Clamp(verticalrotation, -verticalclamp, verticalclamp);
+        // --- Rotação vertical (Gira apenas o container da câmera no eixo X) ---
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        verticalRotation -= mouseY;
+        verticalRotation = Mathf.Clamp(verticalRotation, -verticalClamp, verticalClamp);
+        cameraContainer.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
-
-        #endregion
-
-
-
-        #region Movimentos de Personagem
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        float jump = Input.GetAxis("Jump");
+        // --- Captura de Inputs ---
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
         Vector3 direction = transform.right * h + transform.forward * v;
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += direction * moveSpeed * Time.deltaTime;
+
+        // --- Pulo ---
+        float jump = Input.GetAxis("Jump");
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
-        } }
-        private void OnCollisionEnter(Collision collision)
+
+        }
+
+        
+    }
+
+
+    // --- Detecção de Chão ---
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("ground"))
         {
@@ -60,8 +71,4 @@ public class personagem : MonoBehaviour
         }
     }
 
-   
-        #endregion
-    }
-
-
+}
