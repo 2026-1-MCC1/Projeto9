@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/saida.unity
     guid: 4e6ac018bc96f004ab64dc2d2aa4d615
   - enabled: 1
     path: Assets/Scenes/labirinto.unity
