@@ -6,6 +6,8 @@ public class MenuPrincipalMeneger : MonoBehaviour
 {
     [SerializeField] private string nomeDeLevelDeJogo;
     [SerializeField] private GameObject CanvaSom, CanvaMenu;
+    
+ 
 
     //---Carrega a cena do jogo---
     public void Jogar()

@@ -1,24 +1,33 @@
 using UnityEngine;
-using UnityEngine.Audio; // Necessário para o Mixer
-using UnityEngine.UI; // Necessário para o Slider
+using UnityEngine.SceneManagement;
 
-public class ControleVolume : MonoBehaviour
+public class ControleVolume : MonoBehaviour // O nome deve ser igual ao arquivo!
 {
-    public AudioMixer mixer;
-    public Slider slider;
+    private static ControleVolume instancia;
 
-    void Start()
+    void Awake()
     {
-        // Faz o slider começar na posição correta do volume atual
-        float valorAtual;
-        mixer.GetFloat("MasterVol", out valorAtual);
-        slider.value = Mathf.Pow(10, valorAtual / 20);
+        if (instancia == null)
+        {
+            instancia = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    public void AlterarVolume(float valorSlider)
+    void OnEnable() { SceneManager.sceneLoaded += AoCarregarCena; }
+    void OnDisable() { SceneManager.sceneLoaded -= AoCarregarCena; }
+
+    void AoCarregarCena(Scene cena, LoadSceneMode modo)
     {
-        // Converte o valor do slider (0 a 1) para Decibéis (-80 a 0)
-        float volumeDb = Mathf.Log10(Mathf.Clamp(valorSlider, 0.0001f, 1f)) * 20;
-        mixer.SetFloat("MasterVol", volumeDb);
+        // Para a música se entrar nessas cenas (letras minúsculas!)
+        if (cena.name == "labirinto" || cena.name == "saida")
+        {
+            Destroy(gameObject);
+        }
     }
 }
