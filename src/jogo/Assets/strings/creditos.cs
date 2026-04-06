@@ -3,22 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class creditos : MonoBehaviour
 {
- public void jogarnovamente()
+    //--- Reiniciar o jogo ---
+    public void jogarnovamente()
     {
         SceneManager.LoadScene("labirinto");
         Debug.Log("entrou no jogo de novo!");
     }
-public void sair()
+    //--- Sair do jogo ---
+    public void sair()
     {
         Debug.Log("fechando sistema!");
         Application.Quit();
     }
 
-
-
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 }
 

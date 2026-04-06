@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         // --- Pulo ---
         float jump = Input.GetAxis("Jump");
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)//--- Quando o chão for detectado e o jogador apertar espaço, ele irá pular
         {
             this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
 
@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
 
 
     // --- Detecção de Chão ---
+
+    //---Qunando o jogador colidir com o chão, isGrounded se torna true
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("ground"))
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //---Quando o jogador sair do chão, isGrounded se torna false
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("ground"))
