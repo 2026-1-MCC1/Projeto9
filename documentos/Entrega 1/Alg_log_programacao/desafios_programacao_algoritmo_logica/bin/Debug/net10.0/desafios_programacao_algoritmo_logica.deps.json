@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "desafios_programacao_algoritmo_logica/1.0.0": {
+        "runtime": {
+          "desafios_programacao_algoritmo_logica.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "desafios_programacao_algoritmo_logica/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

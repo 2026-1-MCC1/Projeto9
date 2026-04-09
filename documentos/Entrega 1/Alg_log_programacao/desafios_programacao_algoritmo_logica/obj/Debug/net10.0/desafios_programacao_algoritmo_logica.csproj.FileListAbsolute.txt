@@ -1,0 +1,14 @@
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\bin\Debug\net10.0\desafios_programacao_algoritmo_logica.exe
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\bin\Debug\net10.0\desafios_programacao_algoritmo_logica.deps.json
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\bin\Debug\net10.0\desafios_programacao_algoritmo_logica.runtimeconfig.json
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\bin\Debug\net10.0\desafios_programacao_algoritmo_logica.dll
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\bin\Debug\net10.0\desafios_programacao_algoritmo_logica.pdb
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\desafios_programacao_algoritmo_logica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\desafios_programacao_algoritmo_logica.AssemblyInfoInputs.cache
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\desafios_programacao_algoritmo_logica.AssemblyInfo.cs
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\desafios_programacao_algoritmo_logica.csproj.CoreCompileInputs.cache
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\desafios_programacao_algoritmo_logica.dll
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\refint\desafios_programacao_algoritmo_logica.dll
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\desafios_programacao_algoritmo_logica.pdb
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\desafios_programacao_algoritmo_logica.genruntimeconfig.cache
+C:\Users\DANIEL\Documents\desafios_programacao_algoritmo_logica\obj\Debug\net10.0\ref\desafios_programacao_algoritmo_logica.dll
