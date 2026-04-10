@@ -43,19 +43,19 @@ Console.WriteLine(".............");
 
 #region Desenvolvimento das fases 
 #region Desenvolvimento da fase 1
-while (energia > 0 &&  pontos <5) //Desafio 1
+while (energia > 0 && pontos < 5) //Desafio 1
 {
-    Console.WriteLine("Nivel fácil: "); 
+    Console.WriteLine("Nivel fácil: ");
     Console.WriteLine("1ºDESAFIO: LÓGICO:");
     Console.WriteLine("Complete: 1, 3, 6, 10, 15, ?");
     Console.WriteLine("A resposta é: ");
     p1 = int.Parse(Console.ReadLine());
 
-    if ( p1 == 21)
+    if (p1 == 21)
     {
         pontos++;
         Console.WriteLine("                     ");
-        Console.WriteLine(nome+ " contêm:"+ pontos +" ponto "+" e " + energia +" energias.");
+        Console.WriteLine(nome + " contêm:" + pontos + " ponto " + " e " + energia + " energias.");
         Console.WriteLine("                     ");
 
         #region Desenvolvimento das fase (2)
@@ -140,7 +140,7 @@ while (energia > 0 &&  pontos <5) //Desafio 1
                                     }
                                 }
                                 #endregion
-                                
+
                             }
                             if (energia > 0 && p4 != 5)
                             {
@@ -174,7 +174,7 @@ while (energia > 0 &&  pontos <5) //Desafio 1
                     }
                     if (p3 == 000)
                     {
-                        energia-= 100;
+                        energia -= 100;
                         Console.WriteLine("Que pena que vocÊ desistiu, caso queira tente novamente.");
                     }
                 }
@@ -191,21 +191,22 @@ while (energia > 0 &&  pontos <5) //Desafio 1
             {
                 Console.WriteLine("Infelizmente você ficou sem energias, renicie o jogo e tente novamente.");
             }
-            if( p2 == 000)
+            if (p2 == 000)
             {
                 energia -= 100;
                 Console.WriteLine("Que pena que vocÊ desistiu, caso queira tente novamente.");
             }
         }
         #endregion
-#endregion
+        #endregion
     }
-    if (energia> 0 && p1!= 21){
+    if (energia > 0 && p1 != 21)
+    {
         energia -= 10;
-        Console.WriteLine(perdeu +" Restam: "+ energia + " energias.");
+        Console.WriteLine(perdeu + " Restam: " + energia + " energias.");
         Console.WriteLine("                     ");
     }
-    if(energia ==0 )
+    if (energia == 0)
     {
         Console.WriteLine("Infelizmente você ficou sem energias, renicie o jogo e tente novamente.");
     }
@@ -220,7 +221,7 @@ while (energia > 0 &&  pontos <5) //Desafio 1
 
 #region Fim!
 Console.WriteLine("Status:");
-Console.WriteLine("Nome jogador: " + nome + " Curso de: "+curso);
-Console.WriteLine( "Energia restante: " + energia);
-Console.WriteLine( " você conseguiu: " + pontos + " pontos.");
+Console.WriteLine("Nome jogador: " + nome + " Curso de: " + curso);
+Console.WriteLine("Energia restante: " + energia);
+Console.WriteLine(" você conseguiu: " + pontos + " pontos.");
 #endregion
