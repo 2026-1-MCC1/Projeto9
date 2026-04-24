@@ -4,6 +4,7 @@ using UnityEngine.InputSystem.XR;
 
 public class PlayerController : MonoBehaviour
 {
+    
     [Header("Movimentação")]
     public float moveSpeed = 18f;
     public float jumpForce = 5f;
@@ -18,9 +19,16 @@ public class PlayerController : MonoBehaviour
     private float verticalRotation = 0f;
     public bool isGrounded;
 
+    private Rigidbody rb;
+
+    public float forcaPulo = 10f;
+    float multiplicadorQueda = 3f;
+    float multiplicadorPulo = 2f;
+
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; 
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -35,22 +43,41 @@ public class PlayerController : MonoBehaviour
         verticalRotation = Mathf.Clamp(verticalRotation, -verticalClamp, verticalClamp);
         cameraContainer.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
-        // --- Captura de Inputs ---
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
-        Vector3 direction = transform.right * h + transform.forward * v;
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        // Captura input
+        float movimentoX = Input.GetAxis("Horizontal");
+        float movimentoZ = Input.GetAxis("Vertical");
+
+        Vector3 movimento = transform.right * movimentoX + transform.forward * movimentoZ;
+
+        // Move o personagem
+        Vector3 velocidadeFinal = movimento * moveSpeed;
+
+        rb.linearVelocity = new Vector3(velocidadeFinal.x, rb.linearVelocity.y, velocidadeFinal.z);
 
         // --- Pulo ---
         float jump = Input.GetAxis("Jump");
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)//--- Quando o chão for detectado e o jogador apertar espaço, ele irá pular
         {
-            this.GetComponent<Rigidbody>().AddForce(Vector3.up * 10, ForceMode.Impulse);
-
+            // Mais controlado que AddForce
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 6f, rb.linearVelocity.z);
         }
+    }
 
-        
+    void FixedUpdate()
+    {
+        // --- Gravidade mais realista ---
+        if (rb.linearVelocity.y < 0)
+        {
+            // Cai mais rápido
+            rb.linearVelocity += Vector3.up * Physics.gravity.y * (multiplicadorQueda - 1) * Time.fixedDeltaTime;
+        }
+        else if (rb.linearVelocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        {
+            // Soltou o botão → pulo menor
+            rb.linearVelocity += Vector3.up * Physics.gravity.y * (multiplicadorPulo - 1) * Time.fixedDeltaTime;
+        }
     }
 
 
@@ -75,3 +102,50 @@ public class PlayerController : MonoBehaviour
     }
 
 }
+
+/* public float velocidade = 5f;
+   public float forcaPulo = 5f;
+
+   private Rigidbody rb;
+   private bool estaNoChao;
+
+   void Start()
+   {
+       rb = GetComponent<Rigidbody>();
+   }
+
+   void Update()
+   {
+       // Captura input
+       float movimentoX = Input.GetAxis("Horizontal");
+       float movimentoZ = Input.GetAxis("Vertical");
+
+       Vector3 movimento = new Vector3(movimentoX, 0f, movimentoZ);
+
+       // Move o personagem
+       Vector3 velocidadeFinal = movimento * velocidade;
+       rb.linearVelocity = new Vector3(velocidadeFinal.x, rb.linearVelocity.y, velocidadeFinal.z);
+
+       // Pulo
+       if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
+       {
+           rb.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
+       }
+   }
+
+   private void OnCollisionEnter(Collision colisao)
+   {
+       if (colisao.gameObject.CompareTag("Chao"))
+       {
+           estaNoChao = true;
+       }
+   }
+
+   private void OnCollisionExit(Collision colisao)
+   {
+       if (colisao.gameObject.CompareTag("Chao"))
+       {
+           estaNoChao = false;
+       }
+   } 
+   */
