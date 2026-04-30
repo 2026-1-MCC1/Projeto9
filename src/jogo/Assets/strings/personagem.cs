@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     float multiplicadorQueda = 3f;
     float multiplicadorPulo = 2f;
 
+    public CharacterController controller;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
