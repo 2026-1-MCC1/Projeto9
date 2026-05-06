@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class checkpoint : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class checkpoint : MonoBehaviour
     public float lifemax = 100; //vida para sempre
     private Vector3 ultimoCheckpoint;
     // Armazena a posição de onde o jogador deve renasce 
+    [Header("Referência da Interface")]
+    public Slider barraVidaUI;
 
     // Referência ao CharacterController do seu script Playermover
     private CharacterController controller;
@@ -17,11 +21,23 @@ public class checkpoint : MonoBehaviour
     {
         // Pega o CharacterController que já está no jogador
         controller = GetComponent<CharacterController>();
-
+        
         // Define que o checkpoint inicial é o exato local onde ele nasce no mapa
         ultimoCheckpoint = transform.position;
-    }
 
+        if (barraVidaUI != null)
+        {
+            barraVidaUI.maxValue = lifemax;
+            AtualizarBarra();
+        }
+    }
+    void AtualizarBarra()
+    {
+        if (barraVidaUI != null)
+        {
+            barraVidaUI.value = life;
+        }
+    }
     void Update()
     {
 
@@ -29,30 +45,42 @@ public class checkpoint : MonoBehaviour
         {
             Respawnar();
             life = lifemax;
+            AtualizarBarra();
         }
 
 
-        void Respawnar() // classe de respawnar
-        {
-            // O SEGREDO DO CHARACTER CONTROLLER:
-            // Precisamos desligá-lo rapidamente para que ele permita o teleporte
-            if (controller != null)
-            {
-                controller.enabled = false;
-            }
-            // Teleporta o jogador de volta para a posição salva
-            transform.position = ultimoCheckpoint;
-            // Liga o Character Controller de volta para ele voltar a andar e cair
-            if (controller != null)
-            {
-                controller.enabled = true;
-            }
-            Debug.Log(" Voltando ao último checkpoint...");
-        }
+       
     }
     public void tomarDano (float dano)
     {
         life -= dano;
+        AtualizarBarra();
+    }
+    public void Curar(float quantidade)
+    {
+        // Mathf.Min garante que a vida não passe do lifemax
+        life = Mathf.Min(life + quantidade, lifemax);
+
+        // Atualiza a barra de vida para que o jogador veja subindo
+        AtualizarBarra();
+    }
+
+    void Respawnar() // classe de respawnar
+    {
+        // O SEGREDO DO CHARACTER CONTROLLER:
+        // Precisamos desligá-lo rapidamente para que ele permita o teleporte
+        if (controller != null)
+        {
+            controller.enabled = false;
+        }
+        // Teleporta o jogador de volta para a posição salva
+        transform.position = ultimoCheckpoint;
+        // Liga o Character Controller de volta para ele voltar a andar e cair
+        if (controller != null)
+        {
+            controller.enabled = true;
+        }
+        Debug.Log(" Voltando ao último checkpoint...");
     }
 
     // Essa função é chamada automaticamente quando o jogador encosta em uma Trigger
@@ -64,13 +92,27 @@ public class checkpoint : MonoBehaviour
             Debug.Log("Novo checkpoint salvo!");
             outro.enabled = false;
         }
-        else if (outro.CompareTag("Trap"))
+        if (outro.CompareTag("spike"))
         {
-            tomarDano(25); // dano configurável
+            Respawnar();
         }
-        else if (outro.CompareTag("Finish"))
+        if (outro.CompareTag("Arrow"))
+        {
+            tomarDano(20); // dano configurável
+        }
+        if (outro.CompareTag("Finish"))
         {
             VencerJogo();
+        }
+         
+    }
+
+  
+    private void OnTriggerStay(Collider segundo)
+    {
+        if (segundo.CompareTag("cura"))
+        {
+            Curar(0.1f);
         }
     }
     void VencerJogo()
