@@ -1,33 +1,15 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
-public class ControleVolume : MonoBehaviour // O nome deve ser igual ao arquivo!
+public class ControleVolume : MonoBehaviour
 {
-    private static ControleVolume instancia;
+    public AudioMixer meuMixer;
 
-    void Awake()
+    public void AlterarVolume(float valorSlider)
     {
-        if (instancia == null)
-        {
-            instancia = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-    }
-
-    void OnEnable() { SceneManager.sceneLoaded += AoCarregarCena; }
-    void OnDisable() { SceneManager.sceneLoaded -= AoCarregarCena; }
-
-    void AoCarregarCena(Scene cena, LoadSceneMode modo)
-    {
-        // Para a música se entrar nessas cenas (letras minúsculas!)
-        if (cena.name == "labirinto" || cena.name == "saida")
-        {
-            Destroy(gameObject);
-        }
+        // Converte o valor do slider para a escala do Mixer
+        // Isso faz com que o som abaixe de forma natural ao ouvido
+        meuMixer.SetFloat("MasterVol", Mathf.Log10(valorSlider) * 20);
     }
 }
