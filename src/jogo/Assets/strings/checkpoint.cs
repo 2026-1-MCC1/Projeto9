@@ -112,7 +112,7 @@ public class checkpoint : MonoBehaviour
     {
         if (segundo.CompareTag("cura"))
         {
-            Curar(0.1f);
+            Curar(0.5f);
         }
     }
     void VencerJogo()
