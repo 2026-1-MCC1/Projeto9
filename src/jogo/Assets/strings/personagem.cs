@@ -31,10 +31,16 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
+
     }
 
     void Update()
     {
+        if (Time.timeScale == 0f) //travar a camera quando entrar no menu 
+        {
+            return;
+        }
+
         // --- Rotação horizontal (Gira o corpo todo no eixo Y) ---
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         transform.Rotate(0f, mouseX, 0f);
