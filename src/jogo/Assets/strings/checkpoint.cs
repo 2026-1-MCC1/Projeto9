@@ -67,8 +67,6 @@ public class checkpoint : MonoBehaviour
 
     void Respawnar() // classe de respawnar
     {
-        // O SEGREDO DO CHARACTER CONTROLLER:
-        // Precisamos desligá-lo rapidamente para que ele permita o teleporte
         if (controller != null)
         {
             controller.enabled = false;
