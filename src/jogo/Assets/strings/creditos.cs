@@ -6,7 +6,7 @@ public class creditos : MonoBehaviour
     //--- Reiniciar o jogo ---
     public void jogarnovamente()
     {
-        SceneManager.LoadScene("labirinto");
+        SceneManager.LoadScene("Lab2");
         Debug.Log("entrou no jogo de novo!");
     }
     //--- Sair do jogo ---

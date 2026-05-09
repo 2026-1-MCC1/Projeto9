@@ -5,7 +5,7 @@ public class MenuPrincipalMeneger : MonoBehaviour
 {
     public void Jogar()
     {
-        SceneManager.LoadScene("labirinto");
+        SceneManager.LoadScene("Lab2");
     }
 
     public void AbrirOpcoes()
@@ -21,6 +21,7 @@ public class MenuPrincipalMeneger : MonoBehaviour
     public void Sair()
     {
         Application.Quit();
+        Debug.Log("teste");
     }
 }
 

@@ -42,7 +42,6 @@ public class TrapdoorController : MonoBehaviour
         if (other.CompareTag("Player") && gameObject.CompareTag("Trapdoor"))
         {
             playerPisou = true;
-            Debug.Log("COLISÃO DETECTADA: Player entrou em uma Trapdoor!");
         }
     }
 }

@@ -43,7 +43,6 @@ public class ProjectileArrow : MonoBehaviour
         // Se bater em algo que não seja o lançador
         if (!other.CompareTag("Trap"))
         {
-            Debug.Log($"Colidiu com {other.name}, voltando para o lançador.");
             ResetArrow();
         }
     }

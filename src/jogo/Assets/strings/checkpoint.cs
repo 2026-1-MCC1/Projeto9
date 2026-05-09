@@ -96,7 +96,7 @@ public class checkpoint : MonoBehaviour
         }
         if (outro.CompareTag("Arrow"))
         {
-            tomarDano(20); // dano configurável
+            tomarDano(5); // dano configurável
         }
         if (outro.CompareTag("Finish"))
         {

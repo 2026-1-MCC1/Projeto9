@@ -21,6 +21,8 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+       
+
         rb = GetComponent<Rigidbody>();
 
         anim = GetComponent<Animator>();
@@ -39,6 +41,11 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+
         ControleMouse();
 
         // Pulo
