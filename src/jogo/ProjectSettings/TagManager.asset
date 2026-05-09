@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - spike
   - cura
+  - Trapdoor
   layers:
   - Default
   - TransparentFX
