@@ -46,6 +46,7 @@ public class checkpoint : MonoBehaviour
             Respawnar();
             life = lifemax;
             AtualizarBarra();
+            transform.position = ultimoCheckpoint;
         }
 
 
@@ -80,6 +81,7 @@ public class checkpoint : MonoBehaviour
         }
         Debug.Log(" Voltando ao último checkpoint...");
     }
+    
 
     // Essa função é chamada automaticamente quando o jogador encosta em uma Trigger
     void OnTriggerEnter(Collider outro)
@@ -110,12 +112,18 @@ public class checkpoint : MonoBehaviour
     {
         if (segundo.CompareTag("cura"))
         {
-            Curar(0.5f);
+            Curar(0.1f);
         }
     }
     void VencerJogo()
     {
         Debug.Log("Parabéns!");
         SceneManager.LoadScene("saida");
+
+        // Destrava o mouse do centro da tela para que ele possa se mover livremente
+        Cursor.lockState = CursorLockMode.None;
+
+        // Torna a "setinha" do mouse visível novamente
+        Cursor.visible = true;
     }
 }

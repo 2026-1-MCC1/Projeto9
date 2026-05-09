@@ -5,6 +5,10 @@ public class MenuPrincipalMeneger : MonoBehaviour
 {
     public void Jogar()
     {
+        SceneManager.LoadScene("labirinto");
+    }
+    public void Iniciar()
+    {
         SceneManager.LoadScene("Lab2");
     }
 
