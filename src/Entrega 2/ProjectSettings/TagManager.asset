@@ -10,6 +10,7 @@ TagManager:
   - spike
   - cura
   - Trapdoor
+  - Enemy
   layers:
   - Default
   - TransparentFX

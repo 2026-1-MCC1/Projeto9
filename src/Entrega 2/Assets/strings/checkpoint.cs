@@ -100,6 +100,10 @@ public class checkpoint : MonoBehaviour
         {
             tomarDano(5); // dano configurável
         }
+        if(outro.CompareTag("Enemy"))
+        {
+            Respawnar(); 
+        }
         if (outro.CompareTag("Finish"))
         {
             VencerJogo();
