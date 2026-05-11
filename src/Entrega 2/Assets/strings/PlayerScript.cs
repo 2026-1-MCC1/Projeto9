@@ -90,7 +90,7 @@ public class PlayerScript : MonoBehaviour
 
         float mouseY = Input.GetAxis("Mouse Y") * sensibilidadeMouse;
         rotacaoX -= mouseY;
-        rotacaoX = Mathf.Clamp(rotacaoX, -limiteVertical, limiteVertical);
+        rotacaoX = Mathf.Clamp(rotacaoX, -15f, limiteVertical);
 
         if (cameraTransform != null)
             cameraTransform.localRotation = Quaternion.Euler(rotacaoX, 0f, 0f);
