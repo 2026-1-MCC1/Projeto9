@@ -102,7 +102,7 @@ public class checkpoint : MonoBehaviour
         }
         if(outro.CompareTag("Enemy"))
         {
-            Respawnar(); 
+            tomarDano(80);
         }
         if (outro.CompareTag("Finish"))
         {
