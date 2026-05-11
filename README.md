@@ -72,31 +72,32 @@ Coloque código do prompt de comnando se for necessário
 
 <b>Windows:</b>
 
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
+Entre na pasta executável, e dentro dela a basta build, baixe e execute o arquivo chamado jogo.
 
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+# Instruções de Configuração
 
-Para abrir este projeto você necessita das seguintes ferramentas:
+## 🛠️ Ferramentas Necessárias
+*   **Unity Hub**
+*   **Unity Editor 6000.3.6f1**
 
--<a href="https://godotengine.org/download">GODOT</a>
+---
 
-```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
-```
+## 🚀 Passos para Execução
+
+1.  **Instale o Unity Hub**
+    *   Certifique-se de estar logado na sua conta Unity.
+2.  **Instale ou abra a versão Unity 6000.3.6f1**
+    *   Caso não possua, baixe-a através da aba *Installs* no Unity Hub.
+3.  **Abra o projeto**
+    *   No Unity Hub, clique em *Add* e selecione a pasta:  
+      `src/Entrega 2/Frontend/PI_CADD`
+4.  **Carregue a Cena Principal**
+    *   No painel *Project*, navegue até:  
+      `Assets/Scenes/Menu.unity` e dê um clique duplo para abrir.
+5.  **Inicie o teste**
+    *   Clique no botão **Play** (ícone de triângulo) no topo do editor para entrar no *Play Mode*.
 
 ## 📋 Licença/License
 Utilize o link <https://chooser-beta.creativecommons.org/> para fazer uma licença CC BY 4.0.
