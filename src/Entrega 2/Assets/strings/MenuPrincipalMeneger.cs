@@ -3,6 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuPrincipalMeneger : MonoBehaviour
 {
+    public GameObject painelCreditos;
+
+    public void AbrirCreditos()
+    {
+        SceneManager.LoadScene("Creditos");
+    }
+     public void FecharCreditos()
+    {
+        SceneManager.LoadScene("Menu");
+    }
     public void Jogar()
     {
         SceneManager.LoadScene("labirinto");
