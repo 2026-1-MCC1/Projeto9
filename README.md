@@ -22,8 +22,8 @@ Vide tutoriais do PI.
 ## Descrição
 
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+<img src="imagens/minotauro.png" alt="NOME DO JOGO" border="0">
+  Game by <a href="https://www.linkedin.com/in/gabriel-ribeiro-alves-a5984b329/">Gabriel Ribeiro Alves</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Kimura</a>, <a href="https://www.linkedin.com/in/samuel-eblak-851a19367/">Samuel Eblak</a>, <a href="www.linkedin.com/in/joão-croti-4b8b573b8">João Croti</a>, <a href="https://www.linkedin.com/in/pablo-kayke-2314a5360?utm_source=share_via&utm_content=profile&utm_medium=member_ios">Pablo Kayke Fernandes Bezerra</a>.
 </p>
 
 
@@ -41,7 +41,7 @@ O projeto foi desenvolvido por alunos do curso de Tecnologia em Ciências da Com
     &emsp;          |Calculo1<br>
     &emsp;          |Eti_pensamento_computacional<br>
     &emsp;          |Pi_GDD<br>
-  &emsp;|Entrega2<br>
+  &emsp;|-->Entrega2<br>
   &emsp;          |Documentação.docx<br>
   &emsp;          |Documentação.docx<br>
   
