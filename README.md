@@ -42,9 +42,12 @@ O projeto foi desenvolvido por alunos do curso de Tecnologia em Ciências da Com
     &emsp;          |Eti_pensamento_computacional<br>
     &emsp;          |Pi_GDD<br>
   &emsp;|-->Entrega2<br>
-  &emsp;          |Documentação.docx<br>
-  &emsp;          |Documentação.docx<br>
-  
+  &emsp;          |Algoritmo_log_prog<br>
+  &emsp;          |Calculo1<br>
+  &emsp;          |Etica<br>
+  &emsp;          |JogosDigitais<br>
+  &emsp;          |Projeto_interdiciplinar<br>
+|-->Executavel<br>
 |-->Imagens<br>
   &emsp;|-->windows<br>
   &emsp;|-->android<br>
@@ -55,19 +58,6 @@ O projeto foi desenvolvido por alunos do curso de Tecnologia em Ciências da Com
   &emsp;|-->Entrega 2<br>
 |readme.md<br>
 
-A pasta raiz contem dois arquivos que devem ser alterados:
-
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
-
-Há também 4 pastas que seguem da seguinte forma:
-
-<b>documentos</b>: Toda a documentação estará nesta pasta.
-
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
-
-<b>imagens</b>: Imagens do sistema
-
-<b>src</b>: Pasta que contém o código fonte.
 
 ## 🛠 Instalação
 
