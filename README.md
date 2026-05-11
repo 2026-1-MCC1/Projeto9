@@ -92,7 +92,7 @@ Entre na pasta executável, e dentro dela a basta build, baixe e execute o arqui
     *   Caso não possua, baixe-a através da aba *Installs* no Unity Hub.
 3.  **Abra o projeto**
     *   No Unity Hub, clique em *Add* e selecione a pasta:  
-      `src/Entrega 2/Frontend/PI_CADD`
+      `src/Entrega 2/`
 4.  **Carregue a Cena Principal**
     *   No painel *Project*, navegue até:  
       `Assets/Scenes/Menu.unity` e dê um clique duplo para abrir.
@@ -100,7 +100,7 @@ Entre na pasta executável, e dentro dela a basta build, baixe e execute o arqui
     *   Clique no botão **Play** (ícone de triângulo) no topo do editor para entrar no *Play Mode*.
 
 ## 📋 Licença/License
-Utilize o link <https://chooser-beta.creativecommons.org/> para fazer uma licença CC BY 4.0.
+Utilize o link <a href="https://github.com/2026-1-MCC1/Projeto9">Silent Maze</a> © 2026 by <a href="https://github.com/2026-1-MCC1/Projeto9">Gabriel Ribeiro, João Croti, Pedro Kimura, Samuel Eblak e Pablo Kaique</a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"> para fazer uma licença CC BY 4.0.
 
 ## 🎓 Referências
 
