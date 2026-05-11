@@ -17,10 +17,7 @@ Vide tutoriais do PI.
 <<<<<<< HEAD
 
 ## Integrantes: <a href="https://www.linkedin.com/in/gabriel-ribeiro-alves-a5984b329/">Gabriel Ribeiro Alves</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Kimura</a>, <a href="https://www.linkedin.com/in/samuel-eblak-851a19367/">Samuel Eblak</a>, <a href="www.linkedin.com/in/joão-croti-4b8b573b8">João Croti</a>, <a href="https://www.linkedin.com/in/pablo-kayke-2314a5360?utm_source=share_via&utm_content=profile&utm_medium=member_ios">Pablo Kayke Fernandes Bezerra</a>.
->>>>>>> 479a4f26fd9e0acee8977a7e59ac475501a25236
->>>>>>> 72ee18503090fdc3c91b82ad8df1b5fe4a8a14cc
-
-## Professores Orientadores: <a href="https://www.linkedin.com/in/adriano-valente/">Adriano Felix Valente</a>, <a href="https://www.linkedin.com/in/dolemes/">David de Oliveira Lemes</a>, <a href="https://www.linkedin.com/in/eduardo-savino/">Eduardo Savino Gomes</a>, <a href="https://www.linkedin.com/in/luisspires/">Luis Pires</a>, <a href="https://www.linkedin.com/in/remuniz/">Renata Muniz</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/adriano-valente/">Adriano Felix Valente</a>, <a href="https://www.linkedin.com/in/dolemes/">David de Oliveira Lemes</a>, <a href="https://www.linkedin.com/in/eduardo-savino/">Eduardo Savino Gomes</a>, <a href="https://www.linkedin.com/in/luisspires/">Luis Pires</a>, <a href="https://www.linkedin.com/in/remuniz/">Renata Muniz</a>.
 
 ## Descrição
 
@@ -30,28 +27,32 @@ Vide tutoriais do PI.
 </p>
 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+Silent Maze é um jogo de labirinto 3D em perspectiva de primeira pessoa, desenvolvido na Unity com C#, ambientado em um labirinto de inspiração mitológica grega. O jogador é lançado em um Labirinto denso de folhas e pedras, forçado a explorar com cautela, desviar de armadilhas variadas e ativar checkpoints para encontrar a saída. A atmosfera de mistério e tensão é reforçada por trilha sonora adaptativa e efeitos sonoros imersivos, tornando o labirinto em si o principal antagonista da experiência.
 <br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
+O projeto foi desenvolvido por alunos do curso de Tecnologia em Ciências da Computação da FECAP como atividade de extensão interdisciplinar, integrando conhecimentos de programação, design de jogos, ética computacional e experiência do usuário. O repositório contém o código-fonte completo em C#, o Game Design Document (GDD), assets utilizados e o build executável para Windows.
 <br><br>
-May the force be with you!
-<br><br>
-
 ## 🛠 Estrutura de pastas
 
 -Raiz<br>
 |<br>
 |-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
+  &emsp;|-->Entrega1<br>
+    &emsp;          |Alg_log_programacao<br>
+    &emsp;          |Calculo1<br>
+    &emsp;          |Eti_pensamento_computacional<br>
+    &emsp;          |Pi_GDD<br>
+  &emsp;|Entrega2<br>
+  &emsp;          |Documentação.docx<br>
+  &emsp;          |Documentação.docx<br>
+  
+|-->Imagens<br>
   &emsp;|-->windows<br>
   &emsp;|-->android<br>
   &emsp;|-->HTML<br>
 |-->imagens<br>
 |-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
+  &emsp;|-->Entrega 1<br>
+  &emsp;|-->Entrega 2<br>
 |readme.md<br>
 
 A pasta raiz contem dois arquivos que devem ser alterados:
