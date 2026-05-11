@@ -48,6 +48,7 @@ O projeto foi desenvolvido por alunos do curso de Tecnologia em Ciências da Com
   &emsp;          |JogosDigitais<br>
   &emsp;          |Projeto_interdiciplinar<br>
 |-->Executavel<br>
+ &emsp;          |Build<br>
 |-->Imagens<br>
   &emsp;|-->windows<br>
   &emsp;|-->android<br>
@@ -74,9 +75,9 @@ Coloque código do prompt de comnando se for necessário
 
 Entre na pasta executável, e dentro dela a basta build, baixe e execute o arquivo chamado jogo.
 
-## 💻 Configuração para Desenvolvimento
+# 💻 Configuração para Desenvolvimento
 
-# Instruções de Configuração
+## Instruções de Configuração
 
 ## 🛠️ Ferramentas Necessárias
 *   **Unity Hub**
