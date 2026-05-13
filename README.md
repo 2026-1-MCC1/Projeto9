@@ -64,7 +64,7 @@ O projeto foi desenvolvido por alunos do curso de Tecnologia em Ciências da Com
 
 <b>Windows:</b>
 
-Entre na pasta executável, e dentro dela a basta build, baixe e execute o arquivo chamado jogo.
+Entre na pasta executável, e dentro dela contém um link do drive, lá se encontra a pasta build, baixe ela, a descompacte e execute o arquivo chamado jogo.
 
 # 💻 Configuração para Desenvolvimento
 
