@@ -10,19 +10,17 @@ public class checkpoint : MonoBehaviour
     public float life = 100; //vida agora
     public float lifemax = 100; //vida para sempre
     private Vector3 ultimoCheckpoint;
-    // Armazena a posição de onde o jogador deve renasce 
+
     [Header("Referência da Interface")]
     public Slider barraVidaUI;
 
-    // Referência ao CharacterController do seu script Playermover
     private CharacterController controller;
+    private PlayerControllerSounds playerSom;
 
     void Start()
     {
-        // Pega o CharacterController que já está no jogador
         controller = GetComponent<CharacterController>();
-        
-        // Define que o checkpoint inicial é o exato local onde ele nasce no mapa
+        playerSom = GetComponent<PlayerControllerSounds>();
         ultimoCheckpoint = transform.position;
 
         if (barraVidaUI != null)
@@ -31,6 +29,7 @@ public class checkpoint : MonoBehaviour
             AtualizarBarra();
         }
     }
+
     void AtualizarBarra()
     {
         if (barraVidaUI != null)
@@ -38,96 +37,121 @@ public class checkpoint : MonoBehaviour
             barraVidaUI.value = life;
         }
     }
+
     void Update()
     {
-
         if (0 >= life)
         {
+            if (playerSom != null) playerSom.TocarMorte();
+
+            // A função Respawnar já faz o teletransporte seguro (desligando e ligando o controller)
             Respawnar();
+
             life = lifemax;
             AtualizarBarra();
-            transform.position = ultimoCheckpoint;
+            // REMOVIDO: transform.position = ultimoCheckpoint; (Era isso que estava quebrando a física!)
         }
-
-
-       
     }
-    public void tomarDano (float dano)
+
+    public void tomarDano(float dano)
     {
         life -= dano;
         AtualizarBarra();
+
+        if (life > 0 && playerSom != null)
+        {
+            playerSom.audioSource.PlayOneShot(playerSom.somDanoGeral);
+        }
     }
+
     public void Curar(float quantidade)
     {
-        // Mathf.Min garante que a vida não passe do lifemax
         life = Mathf.Min(life + quantidade, lifemax);
-
-        // Atualiza a barra de vida para que o jogador veja subindo
         AtualizarBarra();
     }
 
-    void Respawnar() // classe de respawnar
+    void Respawnar()
     {
         if (controller != null)
         {
+            // OBRIGATÓRIO: Desligar o controller para mover pela Unity
             controller.enabled = false;
         }
-        // Teleporta o jogador de volta para a posição salva
+
         transform.position = ultimoCheckpoint;
-        // Liga o Character Controller de volta para ele voltar a andar e cair
+
         if (controller != null)
         {
+            // OBRIGATÓRIO: Ligar de volta após mover
             controller.enabled = true;
         }
         Debug.Log(" Voltando ao último checkpoint...");
     }
-    
 
-    // Essa função é chamada automaticamente quando o jogador encosta em uma Trigger
     void OnTriggerEnter(Collider outro)
     {
         if (outro.CompareTag("Checkpoint"))
         {
             ultimoCheckpoint = outro.transform.position;
-            Debug.Log("Novo checkpoint salvo!");
+            if (playerSom != null) playerSom.audioSource.PlayOneShot(playerSom.somCheckpoint);
             outro.enabled = false;
         }
+
         if (outro.CompareTag("spike"))
         {
+            if (playerSom != null)
+            {
+                playerSom.audioSource.PlayOneShot(playerSom.somEspinhos);
+                playerSom.TocarMorte();
+            }
             Respawnar();
         }
+
         if (outro.CompareTag("Arrow"))
         {
-            tomarDano(5); // dano configurável
+            tomarDano(5);
         }
-        if(outro.CompareTag("Enemy"))
+
+        if (outro.CompareTag("Enemy"))
         {
             tomarDano(80);
         }
+
         if (outro.CompareTag("Finish"))
         {
             VencerJogo();
         }
-         
     }
 
-  
     private void OnTriggerStay(Collider segundo)
     {
         if (segundo.CompareTag("cura"))
         {
-            Curar(0.1f);
+            if (life < lifemax)
+            {
+                Curar(0.1f);
+                if (playerSom != null) playerSom.IniciarSomCura();
+            }
+            else
+            {
+                if (playerSom != null) playerSom.PararSomCura();
+            }
         }
     }
+
+    private void OnTriggerExit(Collider outro)
+    {
+        if (outro.CompareTag("cura"))
+        {
+            if (playerSom != null) playerSom.PararSomCura();
+        }
+    }
+
     void VencerJogo()
     {
         Debug.Log("Parabéns!");
         SceneManager.LoadScene("saida");
-
-        // Destrava o mouse do centro da tela para que ele possa se mover livremente
         Cursor.lockState = CursorLockMode.None;
-
-        // Torna a "setinha" do mouse visível novamente
         Cursor.visible = true;
     }
 }

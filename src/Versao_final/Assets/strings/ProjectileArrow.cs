@@ -4,27 +4,30 @@ public class ProjectileArrow : MonoBehaviour
 {
     [Header("Configurações de Voo")]
     public float speed = 15f;
-    public float maxDistance = 50f; // Distância máxima antes de resetar (caso não bata em nada)
+    public float maxDistance = 50f;
 
     private Vector3 startPosition;
     private Quaternion startRotation;
     private bool isFlying = false;
 
+    // --- ADIÇÃO: Referência do Som ---
+    private AudioSource audioSource;
+
     void Start()
     {
-        // Salva a posição e rotação inicial (dentro do lançador)
         startPosition = transform.position;
         startRotation = transform.rotation;
+
+        // --- ADIÇÃO: Pega o componente Audio Source da flecha ---
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         if (isFlying)
         {
-            // Move para frente
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
-            // Se voar demais sem bater em nada, reseta
             if (Vector3.Distance(startPosition, transform.position) > maxDistance)
             {
                 ResetArrow();
@@ -32,15 +35,19 @@ public class ProjectileArrow : MonoBehaviour
         }
     }
 
-    // Esta função será chamada pelo seu script de "Timer" ou "TrapManager"
     public void Shoot()
     {
         isFlying = true;
+
+        // --- ADIÇÃO: Toca o som exatamente no momento em que a flecha é disparada ---
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Se bater em algo que não seja o lançador
         if (!other.CompareTag("Trap"))
         {
             ResetArrow();
@@ -50,8 +57,13 @@ public class ProjectileArrow : MonoBehaviour
     void ResetArrow()
     {
         isFlying = false;
-        // Teletransporta a flecha de volta para o lugar original
         transform.position = startPosition;
         transform.rotation = startRotation;
+
+        // Opcional: Se o som da flecha for muito longo, ele corta o som quando ela bate na parede
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
     }
 }
