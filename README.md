@@ -65,8 +65,6 @@ Entre na pasta executável, e dentro dela contém um link do drive, lá se encon
 <br>
 # 💻 Configuração para Desenvolvimento
 
-## Instruções de Configuração
-
 ## 🛠️ Ferramentas Necessárias
 *   **Unity Hub**
 *   **Unity Editor 6000.3.6f1**
