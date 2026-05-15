@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0, g: 0.026699863, b: 0.09433961, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 8c5026770662d0b4790889fe0a40323a, type: 2}
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -562,7 +562,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.02
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -593,7 +593,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 2800000, guid: dd782de012d182a418de2db2d84b271f, type: 3}
+  m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -10819,8 +10819,8 @@ Transform:
   m_GameObject: {fileID: 201437725}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3134315, z: -0.030442515}
-  m_LocalScale: {x: 3.2312524, y: 3.2312522, z: 3.2312524}
+  m_LocalPosition: {x: -0, y: 0.6, z: 0.02}
+  m_LocalScale: {x: -34.8544, y: -34.85441, z: -34.8544}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 906938415}
@@ -10839,7 +10839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TorchFlicker
   torchLight: {fileID: 201437729}
   minIntensity: 5
-  maxIntensity: 20
+  maxIntensity: 25
 --- !u!114 &201437728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10880,7 +10880,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 0.6894004, b: 0, a: 1}
-  m_Intensity: 20
+  m_Intensity: 25
   m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -51862,8 +51862,8 @@ Transform:
   m_GameObject: {fileID: 906938414}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.769, z: -0.21957836}
-  m_LocalScale: {x: 0.30947754, y: 0.30947754, z: 0.30947754}
+  m_LocalPosition: {x: -7.0691e-10, y: 0.765, z: -0.22826}
+  m_LocalScale: {x: 0.34192201, y: 0.34192201, z: 0.34192201}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 201437726}
@@ -68455,7 +68455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310792867891045027, guid: ffcf2a16dbde807449efa7a628904397, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 183.2
+      value: 181.6
       objectReference: {fileID: 0}
     - target: {fileID: 6310792867891045027, guid: ffcf2a16dbde807449efa7a628904397, type: 3}
       propertyPath: m_LocalPosition.y
@@ -68463,7 +68463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310792867891045027, guid: ffcf2a16dbde807449efa7a628904397, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -149.2
+      value: -148.5
       objectReference: {fileID: 0}
     - target: {fileID: 6310792867891045027, guid: ffcf2a16dbde807449efa7a628904397, type: 3}
       propertyPath: m_LocalRotation.w
@@ -124046,7 +124046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ea44e747897b11f49a8ef69e04867de6, type: 3}
       propertyPath: m_Name
-      value: tocha
+      value: tocha (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
