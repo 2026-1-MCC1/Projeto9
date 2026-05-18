@@ -13,6 +13,7 @@ public class MenuGerenciador : MonoBehaviour
     [Header("Configurações")]
     public Slider sliderVolume;
     public AudioMixer mainMixer;
+    public AudioSource[] volumes;
 
     private bool jogoPausado = false;
 
@@ -63,7 +64,20 @@ public class MenuGerenciador : MonoBehaviour
 
     public void AjustarVolume(float valor)
     {
-        mainMixer.SetFloat("VolumeMaster", Mathf.Log10(valor) * 20);
+        //foreach (AudioSource a in volumes)
+        //{
+        //    a.volume = valor;
+        //   
+        //}
+        try
+        {
+            mainMixer.SetFloat("VolumeMaster", Mathf.Log10(valor) * 20);
+        }
+        catch
+        {
+            mainMixer.SetFloat("VolumeMaster", Mathf.Log10(0.001f) * 20);
+            Debug.Log("Volume não pode ser zero!");
+        }
     }
 
     public void IrParaMenu()
