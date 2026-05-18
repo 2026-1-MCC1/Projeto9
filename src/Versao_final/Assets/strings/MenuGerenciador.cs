@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class MenuGerenciador : MonoBehaviour
 
     [Header("Configurações")]
     public Slider sliderVolume;
+    public AudioMixer mainMixer;
 
     private bool jogoPausado = false;
 
@@ -61,7 +63,7 @@ public class MenuGerenciador : MonoBehaviour
 
     public void AjustarVolume(float valor)
     {
-        AudioListener.volume = valor;
+        mainMixer.SetFloat("VolumeMaster", Mathf.Log10(valor) * 20);
     }
 
     public void IrParaMenu()
