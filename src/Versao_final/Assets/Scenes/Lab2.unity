@@ -33092,6 +33092,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482247173}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &482397004 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: 3fc6574f1deaab04eae8588d61f4a441, type: 3}
+  m_PrefabInstance: {fileID: 1663636173}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &482466021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9186180371666669364, guid: 1236ff8bf32f7354b91a8d89822f4130, type: 3}
@@ -41926,6 +41931,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88774115, y: 3.7537134, z: 0.9660285}
   m_Center: {x: -0.44387057, y: 1.8768567, z: 0.48301616}
+--- !u!1 &625320320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 625320321}
+  - component: {fileID: 625320322}
+  m_Layer: 0
+  m_Name: MaoDano
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &625320321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625320320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.6, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 482397004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &625320322
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625320320}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 30, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &625474060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2829649792189312253, guid: 1236ff8bf32f7354b91a8d89822f4130, type: 3}
@@ -65790,10 +65848,9 @@ GameObject:
   - component: {fileID: 1053139086}
   - component: {fileID: 1053139085}
   - component: {fileID: 1053139084}
-  - component: {fileID: 1053139087}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65831,7 +65888,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 720
-  m_StoppingDistance: 0
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -65848,34 +65905,13 @@ Transform:
   m_GameObject: {fileID: 1053139083}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.55, y: 1.79, z: -34.27}
+  m_LocalPosition: {x: 177.4, y: 1.79, z: -144.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1284596960}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1053139087
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053139083}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 8, y: 20, z: 8}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1054276764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87158,6 +87194,7 @@ MonoBehaviour:
   botaoAbrir: {fileID: 0}
   sliderVolume: {fileID: 0}
   mainMixer: {fileID: 24100000, guid: dca7bbc1c8fe4d949849f4286471918c, type: 2}
+  volumes: []
 --- !u!4 &1386975503
 Transform:
   m_ObjectHideFlags: 0
@@ -110118,7 +110155,10 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 6b28106728c58b24dadd4d908ede1bc9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6502182839619065283, guid: 3fc6574f1deaab04eae8588d61f4a441, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 625320321}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fc6574f1deaab04eae8588d61f4a441, type: 3}
       insertIndex: -1
