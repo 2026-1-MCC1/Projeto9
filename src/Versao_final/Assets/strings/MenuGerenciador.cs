@@ -64,19 +64,14 @@ public class MenuGerenciador : MonoBehaviour
 
     public void AjustarVolume(float valor)
     {
-        //foreach (AudioSource a in volumes)
-        //{
-        //    a.volume = valor;
-        //   
-        //}
-        try
+        // Previne o logaritmo de zero, que resulta em -Infinity
+        if (valor <= 0.0001f)
         {
-            mainMixer.SetFloat("VolumeMaster", Mathf.Log10(valor) * 20);
+            mainMixer.SetFloat("VolumeMaster", -80f); // -80dB é o mudo total
         }
-        catch
+        else
         {
-            mainMixer.SetFloat("VolumeMaster", Mathf.Log10(0.001f) * 20);
-            Debug.Log("Volume não pode ser zero!");
+            mainMixer.SetFloat("VolumeMaster", Mathf.Log10(valor) * 20f);
         }
     }
 

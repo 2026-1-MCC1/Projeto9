@@ -18,8 +18,8 @@ public class ProjectileArrow : MonoBehaviour
         startPosition = transform.position;
         startRotation = transform.rotation;
 
-        // --- ADIÇÃO: Pega o componente Audio Source da flecha ---
-        audioSource = GetComponent<AudioSource>();
+        // --- ALTERAÇÃO: Pega o componente Audio Source nos objetos filhos (o seu empty 'som') ---
+        audioSource = GetComponentInChildren<AudioSource>();
     }
 
     void Update()
