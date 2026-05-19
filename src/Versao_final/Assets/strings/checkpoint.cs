@@ -13,8 +13,10 @@ public class checkpoint : MonoBehaviour
 
     [Header("Referência da Interface")]
     public Slider barraVidaUI;
+    public GameObject canvasCheckpoint;
 
     private CharacterController controller;
+    
     private PlayerControllerSounds playerSom;
 
     void Start()
@@ -27,6 +29,10 @@ public class checkpoint : MonoBehaviour
         {
             barraVidaUI.maxValue = lifemax;
             AtualizarBarra();
+        }
+        if (canvasCheckpoint != null)
+        {
+            canvasCheckpoint.SetActive(false);
         }
     }
 
@@ -95,7 +101,12 @@ public class checkpoint : MonoBehaviour
             ultimoCheckpoint = outro.transform.position;
             if (playerSom != null) playerSom.audioSource.PlayOneShot(playerSom.somCheckpoint);
             outro.enabled = false;
+            if (canvasCheckpoint != null)
+            {
+                StartCoroutine(AparecerImagemTempo());
+            }
         }
+
 
         if (outro.CompareTag("spike"))
         {
@@ -153,5 +164,16 @@ public class checkpoint : MonoBehaviour
         SceneManager.LoadScene("saida");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+    private System.Collections.IEnumerator AparecerImagemTempo()
+    {
+        // 1. Liga o Canvas (a imagem aparece)
+        canvasCheckpoint.SetActive(true);
+
+        // 2. Espera exatamente 2 segundos
+        yield return new WaitForSeconds(3f);
+
+        // 3. Desliga o Canvas (a imagem some)
+        canvasCheckpoint.SetActive(false);
     }
 }
