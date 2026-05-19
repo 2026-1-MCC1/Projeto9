@@ -8,6 +8,9 @@ public class NPCscript : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
+    [Header("Ativação")]
+    public bool ativo = false;
+
     [Header("Movimento")]
     public float velocidadeRotacao = 10f;
     public float suavizacaoRotacao = 5f;
@@ -32,11 +35,14 @@ public class NPCscript : MonoBehaviour
         // ESSENCIAL: desativa rotação automática do NavMesh Agent
         // para a gente controlar manualmente com mais precisão
         agent.updateRotation = false;
+
+        // Começa parado
+        agent.isStopped = true;
     }
 
     void Update()
     {
-        if (player == null) return;
+        if (!ativo || player == null) return;
 
         float distancia = Vector3.Distance(transform.position, player.position);
         timerAtaque -= Time.deltaTime;
@@ -77,6 +83,13 @@ public class NPCscript : MonoBehaviour
 
         if (animator != null)
             animator.SetFloat("Speed", agent.velocity.magnitude);
+    }
+
+    public void Ativar()
+    {
+        ativo = true;
+        agent.isStopped = false;
+        Debug.Log("Minotauro ativado!");
     }
 
     void RotacaoSuave()
