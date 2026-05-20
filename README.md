@@ -79,7 +79,7 @@ Entre na pasta executável, e dentro dela contém um link do drive, lá se encon
     *   Caso não possua, baixe-a através da aba *Installs* no Unity Hub.
 3.  **Abra o projeto**
     *   No Unity Hub, clique em *Add* e selecione a pasta:  
-      `src/Entrega 2/`
+      `src/Versao_final/`
 4.  **Carregue a Cena Principal**
     *   No painel *Project*, navegue até:  
       `Assets/Scenes/Menu.unity` e dê um clique duplo para abrir.
