@@ -16,7 +16,7 @@
 ## Descrição
 
 <p align="center">
-<img src="imagens/minotauro.png" alt="NOME DO JOGO" border="0">
+<img src="imagens/capturadetela(1).png" alt="NOME DO JOGO" border="0">
   Game by <a href="https://www.linkedin.com/in/gabriel-ribeiro-alves-a5984b329/">Gabriel Ribeiro Alves</a>, <a href="https://www.linkedin.com/in/victorbarq/">Pedro Kimura</a>, <a href="https://www.linkedin.com/in/samuel-eblak-851a19367/">Samuel Eblak</a>, <a href="www.linkedin.com/in/joão-croti-4b8b573b8">João Croti</a>, <a href="https://www.linkedin.com/in/pablo-kayke-2314a5360?utm_source=share_via&utm_content=profile&utm_medium=member_ios">Pablo Kayke Fernandes Bezerra</a>.
 </p>
 
