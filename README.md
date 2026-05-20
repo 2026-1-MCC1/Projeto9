@@ -61,7 +61,7 @@ O projeto foi desenvolvido por alunos do curso de Tecnologia em Ciências da Com
 Entre na pasta executável, e dentro dela contém um link do drive, lá se encontra a pasta build, baixe ela, a descompacte e execute o arquivo chamado jogo.
 
 ### Link Drive
-<a href="https://drive.google.com/file/d/17ZNQB6_MkH8AU0XeEwAPCP4HF82lBr-V/view?usp=sharing">Clique aqui</a>
+<a href="https://drive.google.com/file/d/1tJgMmLvHKDOFK6ivBjc5r9hytL1NiPxP/view?usp=sharing">Clique aqui</a>
 <br>
 # 💻 Configuração para Desenvolvimento
 
