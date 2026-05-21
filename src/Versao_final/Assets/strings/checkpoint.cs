@@ -43,6 +43,10 @@ public class checkpoint : MonoBehaviour
             barraVidaUI.value = life;
         }
     }
+    void returnlife()
+    {
+        life = lifemax;
+    }
 
     void Update()
     {
@@ -84,13 +88,17 @@ public class checkpoint : MonoBehaviour
             controller.enabled = false;
         }
 
+        transform.position = ultimoCheckpoint;
+
         if (controller != null)
         {
             // OBRIGATÓRIO: Ligar de volta após mover
             controller.enabled = true;
-            life = lifemax;
+           
         }
         Debug.Log(" Voltando ao último checkpoint...");
+        returnlife();
+        AtualizarBarra();
     }
 
     void OnTriggerEnter(Collider outro)
@@ -119,7 +127,7 @@ public class checkpoint : MonoBehaviour
 
         if (outro.CompareTag("Arrow"))
         {
-            tomarDano(5);
+            tomarDano(15);
         }
 
         if (outro.CompareTag("Enemy"))
