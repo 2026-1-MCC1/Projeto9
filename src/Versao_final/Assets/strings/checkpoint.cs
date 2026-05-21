@@ -84,12 +84,11 @@ public class checkpoint : MonoBehaviour
             controller.enabled = false;
         }
 
-        transform.position = ultimoCheckpoint;
-
         if (controller != null)
         {
             // OBRIGATÓRIO: Ligar de volta após mover
             controller.enabled = true;
+            life = lifemax;
         }
         Debug.Log(" Voltando ao último checkpoint...");
     }
